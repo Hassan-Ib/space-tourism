@@ -2,7 +2,8 @@ import React from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import LogoIcon from "../../assets/shared/logo.svg";
 import HamburgerMenuIcon from "../../assets/shared/icon-hamburger.svg";
-// import HomeBg from "../../assets/home/background-home-mobile.jpg";
+import closeMenuIcon from "../../assets/shared/icon-close.svg";
+
 import { useThemeContext } from "../../provider/themeProvider";
 
 const LinksData = [
@@ -34,17 +35,17 @@ const LinksData = [
 
 const Navbar = () => {
   return (
-    <nav className=" flex items-center font-barlow-condensed text-white font-medium">
+    <nav className=" flex items-center font-barlow-condensed text-white ">
       {/* logo */}
-      <div className="flex-1">
+      <div className="px-6 flex-1">
         <img src={LogoIcon} alt="space tourism logo" className=" " />
       </div>
       {/* line */}
-      <hr className="hidden" />
+      <hr className=" w-[20%] hidden" />
       {/* nav */}
 
       <Links />
-      <button className=" " aria-label="hamburger menu icon">
+      <button className="px-6" aria-label="hamburger menu icon">
         <img src={HamburgerMenuIcon} alt="menu icon" />
       </button>
     </nav>
@@ -54,14 +55,19 @@ const Navbar = () => {
 const Links = () => {
   const location = useLocation();
   return (
-    <div className="absolute top-0 right-0 w-[70%] h-screen flex flex-col justify-center  text-white">
-      <ul>
+    <div className="absolute top-0 right-0 w-[70%] h-screen pl-10 backdrop-blur-2xl backdrop-brightness-125 font-thin">
+      <ul className="flex flex-col gap-10 pt-24">
         {LinksData.map((link, id) => (
           <li key={id} className="">
             <Link {...link} pathname={location.pathname} />
           </li>
         ))}
       </ul>
+      <button
+        aria-label="close navigation link"
+        className="absolute right-0 top-10">
+        <img src={closeMenuIcon} alt="close navigation link" />
+      </button>
     </div>
   );
 };
@@ -85,7 +91,7 @@ const Link = ({
 
   return (
     <RouterLink
-      className="text-xl flex gap-2 "
+      className="text-2xl flex gap-2 tracking-widest"
       onClick={() => setBgTheme?.(bgImage)}
       to={url}>
       <span className="font-bold">{id}</span>

@@ -7,6 +7,10 @@ module.exports = {
         barlow: "Barlow, sans-serif",
         "barlow-condensed": ["'Barlow Condensed'", "sans-serif"],
       },
+      colors: {
+        dark: "#0B0D17",
+        pimary: "#D0D6F9",
+      },
     },
   },
   plugins: [],
