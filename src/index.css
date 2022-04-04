@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400&family=Barlow:ital,wght@0,300;0,400;1,200&family=Bellefair&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +7,18 @@
 font-family: 'Barlow', sans-serif;
 font-family: 'Barlow Condensed', sans-serif;
 font-family: 'Bellefair', serif; */
+
+@layer base {
+  body {
+    @apply text-white;
+  }
+  h1 {
+    @apply font-bellefair text-[80px] leading-[1.5] uppercase;
+  }
+  h5 {
+    @apply font-barlow-condensed text-base leading-normal uppercase tracking-widest;
+  }
+}
 
 @layer utilities {
   /*     
@@ -21,7 +33,7 @@ font-family: 'Bellefair', serif; */
   } */
 
   .bg-home {
-    @apply bg-[url('./assets/home/background-home-mobile.jpg')] md:bg-[url('./assets/home/background-home-tablet.jpg')] lg:bg-[url('./assets/home/background-home-desktop.jpg')];
+    @apply bg-[url('./assets/home/background-home-mobile.jpg')] bg-cover bg-center md:bg-[url('./assets/home/background-home-tablet.jpg')] lg:bg-[url('./assets/home/background-home-desktop.jpg')];
   }
   .bg-crew {
     @apply bg-[url('./assets/crew/background-crew-mobile.jpg')] md:bg-[url('./assets/crew/background-crew-tablet.jpg')] lg:bg-[url('./assets/crew/background-crew-desktop.jpg')];
@@ -33,7 +45,7 @@ font-family: 'Bellefair', serif; */
     @apply bg-[url('./assets/technology/background-technology-mobile.jpg')] md:bg-[url('./assets/technology/background-technology-tablet.jpg')] lg:bg-[url('./assets/technology/background-technology-desktop.jpg')];
   }
   .text-body {
-    @apply font-barlow-condensed text-sm;
+    @apply font-barlow-condensed  leading-normal;
   }
   .text-h1 {
     @apply font-bellefair text-[80px] md:text-[150px];

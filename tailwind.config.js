@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         dark: "#0B0D17",
         pimary: "#D0D6F9",
+        "in-between": "#979797",
       },
     },
   },

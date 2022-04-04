@@ -11,7 +11,7 @@ function App() {
   const { bgImage } = useThemeContext();
   console.log(bgImage);
   return (
-    <div className={`${bgImage} pt-8`}>
+    <div id="app-container" className={`${bgImage} pt-8 h-screen`}>
       <header>
         <Navbar />
       </header>
