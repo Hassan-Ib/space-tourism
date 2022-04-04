@@ -4,31 +4,25 @@ import LogoIcon from "../../assets/shared/logo.svg";
 import HamburgerMenuIcon from "../../assets/shared/icon-hamburger.svg";
 import closeMenuIcon from "../../assets/shared/icon-close.svg";
 
-import { useThemeContext } from "../../provider/themeProvider";
-
 const LinksData = [
   {
     name: "Home",
     url: "/",
     id: "00",
-    bgImage: "bg-home",
   },
   {
     name: "Destination",
     url: "/destination",
-    bgImage: "bg-destination",
     id: "01",
   },
   {
     name: "Crew",
     url: "/crew",
-    bgImage: "bg-crew",
     id: "02",
   },
   {
     name: "Technology",
     url: "/technology",
-    bgImage: "bg-technology",
     id: "03",
   },
 ];
@@ -56,7 +50,7 @@ const Navbar = () => {
   }, [open]);
 
   return (
-    <nav className=" flex items-center font-barlow-condensed text-white ">
+    <nav className="absolute top-0 left-0 w-full py-6 bg-transparent flex items-center font-barlow-condensed text-white ">
       {/* logo */}
       <div className="px-6 flex-1">
         <img src={LogoIcon} alt="space tourism logo" className=" " />
@@ -65,7 +59,7 @@ const Navbar = () => {
       <hr className=" w-[20%] hidden" />
       {/* nav */}
 
-      {open ? <Links open={open} closeNav={closeNav} /> : null}
+      {open ? <Links closeNav={closeNav} /> : null}
       <button
         onClick={openNav}
         className="px-6"
@@ -76,7 +70,7 @@ const Navbar = () => {
   );
 };
 
-const Links = ({ open, closeNav }: { open: boolean; closeNav: () => void }) => {
+const Links = ({ closeNav }: { closeNav: () => void }) => {
   const location = useLocation();
   return (
     <div className="absolute top-0 right-0 w-[70%] h-screen  backdrop-blur-2xl backdrop-brightness-125 ">
@@ -101,23 +95,12 @@ const Link = ({
   pathname,
   url,
   name,
-  bgImage,
   id,
 }: { pathname: string } & typeof LinksData[0]) => {
-  const { setBgTheme } = useThemeContext();
   const isActive = pathname === url;
-  React.useEffect(() => {
-    console.log(pathname, isActive, bgImage);
-    if (isActive) {
-      //for home page and intial render, React wont rerender since i'm the same value
-      setBgTheme?.(bgImage);
-    }
-  }, [bgImage, isActive, setBgTheme, pathname]);
-
   return (
     <RouterLink
       className="relative flex gap-4 tracking-[4px] uppercase pl-10 py-4 group"
-      onClick={() => setBgTheme?.(bgImage)}
       to={url}>
       <span className=" font-black">{id}</span>
       {name}

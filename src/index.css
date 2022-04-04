@@ -33,7 +33,7 @@ font-family: 'Bellefair', serif; */
   } */
 
   .bg-home {
-    @apply bg-[url('./assets/home/background-home-mobile.jpg')] bg-cover bg-center md:bg-[url('./assets/home/background-home-tablet.jpg')] lg:bg-[url('./assets/home/background-home-desktop.jpg')];
+    @apply bg-dark bg-[url('./assets/home/background-home-mobile.jpg')] bg-cover bg-center md:bg-[url('./assets/home/background-home-tablet.jpg')] lg:bg-[url('./assets/home/background-home-desktop.jpg')];
   }
   .bg-crew {
     @apply bg-[url('./assets/crew/background-crew-mobile.jpg')] md:bg-[url('./assets/crew/background-crew-tablet.jpg')] lg:bg-[url('./assets/crew/background-crew-desktop.jpg')];
