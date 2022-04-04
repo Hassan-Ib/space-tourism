@@ -4,8 +4,8 @@ type Props = {};
 
 const Home = (props: Props) => {
   return (
-    <main className="bg-home px-6 pt-44 md:pt-36 py-16 flex flex-col gap-36 items-center">
-      <article className="text-center max-w-md">
+    <main className="bg-home px-6 pt-44 md:pt-36 lg:pt-72 py-16 flex flex-col gap-20 md:gap-36 items-center lg:flex-row lg:h-screen lg:justify-around lg:gap-0">
+      <article className="text-center max-w-md lg:text-left ">
         {/* sub-heading */}
         <h5 className="">so, you want to travel</h5>
         <h1>space</h1>
@@ -17,11 +17,13 @@ const Home = (props: Props) => {
         </p>
       </article>
       {/* action bgn */}
-      <button className="relative text-[20px]  text-dark z-10  w-[160px]  h-[160px] tracking-widest bg-white rounded-full uppercase btn-effect">
-        <div className="w-full h-full bg-inherit rounded-full flex items-center justify-center">
-          Explore
-        </div>
-      </button>
+      <div className=" lg:pt-20">
+        <button className="relative  text-dark z-10 w-[150px] h-[150px] md:w-[242px] md:h-[242px] lg:w-[274px] lg:h-[274px] bg-white rounded-full uppercase btn-effect ">
+          <h4 className="w-full h-full bg-inherit rounded-full flex items-center justify-center">
+            Explore
+          </h4>
+        </button>
+      </div>
     </main>
   );
 };

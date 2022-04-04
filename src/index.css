@@ -15,8 +15,11 @@ font-family: 'Bellefair', serif; */
   h1 {
     @apply font-bellefair text-[80px] leading-normal uppercase md:text-[150px];
   }
+  h4 {
+    @apply text-[20px] md:text-[32px] uppercase tracking-[4px] md:tracking-[5px];
+  }
   h5 {
-    @apply font-barlow-condensed text-lg leading-normal uppercase tracking-[4px] text-primary md:text-[24px] lg:text-[30px];
+    @apply font-barlow-condensed text-base uppercase tracking-[4px] text-primary md:text-[20px] lg:text-[28px];
   }
 }
 
@@ -34,10 +37,10 @@ font-family: 'Bellefair', serif; */
     @apply bg-[url('./assets/technology/background-technology-mobile.jpg')] md:bg-[url('./assets/technology/background-technology-tablet.jpg')] lg:bg-[url('./assets/technology/background-technology-desktop.jpg')];
   }
   .text-body {
-    @apply font-barlow leading-normal text-primary text-lg;
+    @apply font-barlow leading-relaxed text-primary text-base;
   }
   .btn-effect {
-    @apply before:absolute before:-z-10 before:rounded-full before:w-[100%] before:h-[100%] before:top-1/2 before:left-1/2 before:opacity-0 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[150%] hover:before:h-[150%] hover:before:opacity-100 before:bg-trans before:transition-all before:duration-300;
+    @apply before:absolute before:-z-10 before:rounded-full before:w-[100%] before:h-[100%] before:top-1/2 before:left-1/2 before:opacity-0 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[150%] hover:before:h-[150%] hover:before:opacity-100 before:bg-in-between before:bg-opacity-20 before:transition-all before:duration-300;
   }
   .btn-effect::before {
     content: " ";
