@@ -13,25 +13,14 @@ font-family: 'Bellefair', serif; */
     @apply text-white;
   }
   h1 {
-    @apply font-bellefair text-[80px] leading-[1.5] uppercase;
+    @apply font-bellefair text-[80px] leading-normal uppercase md:text-[150px];
   }
   h5 {
-    @apply font-barlow-condensed text-base leading-normal uppercase tracking-widest;
+    @apply font-barlow-condensed text-lg leading-normal uppercase tracking-[4px] text-primary md:text-[24px] lg:text-[30px];
   }
 }
 
 @layer utilities {
-  /*     
-  .font-barlow {
-    font-family: "Bellefair", system-ui, serif;
-  }
-  .font-barlow-condensed {
-    font-family: "Barlow Condensed", sans-serif;
-  }
-  .font-bellefair {
-    font-family: "Bellefair", serif;
-  } */
-
   .bg-home {
     @apply bg-dark bg-[url('./assets/home/background-home-mobile.jpg')] bg-cover bg-center md:bg-[url('./assets/home/background-home-tablet.jpg')] lg:bg-[url('./assets/home/background-home-desktop.jpg')];
   }
@@ -45,12 +34,12 @@ font-family: 'Bellefair', serif; */
     @apply bg-[url('./assets/technology/background-technology-mobile.jpg')] md:bg-[url('./assets/technology/background-technology-tablet.jpg')] lg:bg-[url('./assets/technology/background-technology-desktop.jpg')];
   }
   .text-body {
-    @apply font-barlow-condensed  leading-normal;
+    @apply font-barlow leading-normal text-primary text-lg;
   }
-  .text-h1 {
-    @apply font-bellefair text-[80px] md:text-[150px];
+  .btn-effect {
+    @apply before:absolute before:-z-10 before:rounded-full before:w-[100%] before:h-[100%] before:top-1/2 before:left-1/2 before:opacity-0 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[150%] hover:before:h-[150%] hover:before:opacity-100 before:bg-trans before:transition-all before:duration-300;
   }
-  .text-h4 {
-    @apply font-bellefair text-[20px] lg:text-[32px];
+  .btn-effect::before {
+    content: " ";
   }
 }

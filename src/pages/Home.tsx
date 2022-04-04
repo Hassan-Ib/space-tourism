@@ -4,10 +4,10 @@ type Props = {};
 
 const Home = (props: Props) => {
   return (
-    <main className="bg-home border-2 border-red-500 h-screen px-4 pt-44 py-10 flex flex-col gap-16 items-center">
-      <article className="text-center max-w-xs">
+    <main className="bg-home px-6 pt-44 md:pt-36 py-16 flex flex-col gap-36 items-center">
+      <article className="text-center max-w-md">
         {/* sub-heading */}
-        <h5 className="">so you want to travel</h5>
+        <h5 className="">so, you want to travel</h5>
         <h1>space</h1>
         <p className="text-body">
           Let’s face it; if you want to go to space, you might as well genuinely
@@ -17,8 +17,10 @@ const Home = (props: Props) => {
         </p>
       </article>
       {/* action bgn */}
-      <button className="border-2 border-white text-[20px] text-dark  w-[150px]  h-[150px] tracking-widest bg-white rounded-full uppercase">
-        Explore
+      <button className="relative text-[20px]  text-dark z-10  w-[160px]  h-[160px] tracking-widest bg-white rounded-full uppercase btn-effect">
+        <div className="w-full h-full bg-inherit rounded-full flex items-center justify-center">
+          Explore
+        </div>
       </button>
     </main>
   );

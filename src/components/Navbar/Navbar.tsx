@@ -39,18 +39,19 @@ const Navbar = () => {
 
   React.useEffect(() => {
     const root = document.getElementById("app-container");
+
+    if (!root) return;
+
     if (open) {
       root?.classList.add("h-screen");
+    } else {
+      root?.classList.remove("h-screen");
     }
     console.log("from useEffect");
-    return () => {
-      root?.classList.remove("h-screen");
-      console.log("from useEffect return");
-    };
   }, [open]);
 
   return (
-    <nav className="absolute top-0 left-0 w-full py-6 bg-transparent flex items-center font-barlow-condensed text-white ">
+    <nav className="absolute top-0 left-0 z-50 w-full py-6 bg-transparent flex items-center font-barlow-condensed text-white ">
       {/* logo */}
       <div className="px-6 flex-1">
         <img src={LogoIcon} alt="space tourism logo" className=" " />
