@@ -46,3 +46,12 @@ font-family: 'Bellefair', serif; */
     content: " ";
   }
 }
+
+@supports (not ((-webkit-backdrop-filter: none) or (backdrop-filter: none))) {
+  .nav-link-effect {
+    @apply md:bg-dark lg:bg-dark/95;
+  }
+  .nav-link-effect-mobile {
+    @apply bg-dark/95;
+  }
+}

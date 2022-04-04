@@ -60,7 +60,7 @@ const Navbar = () => {
       {/* nav */}
 
       {open ? (
-        <div className="nav-link-effect absolute md:hidden top-0 right-0 w-[70%] h-screen  backdrop-blur-2xl backdrop-brightness-125 ">
+        <div className="nav-link-effect-mobile absolute md:hidden top-0 right-0 w-[70%] h-screen  backdrop-blur-2xl backdrop-brightness-125 ">
           <Links closeNav={closeNav} />
           <button
             onClick={closeNav}
@@ -112,7 +112,7 @@ const Link = ({
       {name}
 
       <span
-        className={`absolute w-1 h-full top-0 right-0 transition-all duration-300 md:w-full md:h-1 md:top-[93%] md:left-0 ${
+        className={`absolute w-1 h-full top-0 right-0 transition-all duration-300 md:w-full md:h-1 md:top-[96%] md:left-0 ${
           isActive ? "bg-white " : "group-hover:bg-in-between"
         }`}></span>
     </RouterLink>
