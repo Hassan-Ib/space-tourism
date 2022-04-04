@@ -43,27 +43,40 @@ const Navbar = () => {
     if (!root) return;
 
     if (open) {
-      root?.classList.add("h-screen");
+      root?.classList.add("h-screen", "overflow-hidden");
     } else {
-      root?.classList.remove("h-screen");
+      root?.classList.remove("h-screen", "overflow-hidden");
     }
-    console.log("from useEffect");
   }, [open]);
 
   return (
-    <nav className="absolute top-0 left-0 z-50 w-full py-6 bg-transparent flex items-center font-barlow-condensed text-white ">
+    <nav className="absolute top-0 left-0 z-50 w-full py-6 md:py-0 lg:py-10 bg-transparent flex items-center font-barlow-condensed text-white ">
       {/* logo */}
-      <div className="px-6 flex-1">
+      <div className="px-6 flex-1 lg:flex-initial ">
         <img src={LogoIcon} alt="space tourism logo" className=" " />
       </div>
       {/* line */}
-      <hr className=" w-[20%] hidden" />
+      <div className=" h-[2px] ml-10 relative z-20 bg-in-between hidden lg:block flex-1 translate-x-5" />
       {/* nav */}
 
-      {open ? <Links closeNav={closeNav} /> : null}
+      {open ? (
+        <div className="nav-link-effect absolute md:hidden top-0 right-0 w-[70%] h-screen  backdrop-blur-2xl backdrop-brightness-125 ">
+          <Links closeNav={closeNav} />
+          <button
+            onClick={closeNav}
+            aria-label="close navigation link"
+            className="absolute right-10 top-10 ">
+            <img src={closeMenuIcon} alt="close navigation link" />
+          </button>
+        </div>
+      ) : null}
+
+      <div className="nav-link-effect hidden md:block backdrop-blur-2xl backdrop-brightness-125 px-10 lg:px-28   ">
+        <Links closeNav={closeNav} />
+      </div>
       <button
         onClick={openNav}
-        className="px-6"
+        className="px-6 md:hidden"
         aria-label="hamburger menu icon">
         <img src={HamburgerMenuIcon} alt="menu icon" />
       </button>
@@ -74,21 +87,13 @@ const Navbar = () => {
 const Links = ({ closeNav }: { closeNav: () => void }) => {
   const location = useLocation();
   return (
-    <div className="absolute top-0 right-0 w-[70%] h-screen  backdrop-blur-2xl backdrop-brightness-125 ">
-      <ul className=" pt-40">
-        {LinksData.map((link, id) => (
-          <li key={id} className="">
-            <Link {...link} pathname={location.pathname} />
-          </li>
-        ))}
-      </ul>
-      <button
-        onClick={closeNav}
-        aria-label="close navigation link"
-        className="absolute right-6 top-12">
-        <img src={closeMenuIcon} alt="close navigation link" />
-      </button>
-    </div>
+    <ul className=" pt-32 md:py-0 md:flex md:gap-10">
+      {LinksData.map((link, id) => (
+        <li key={id} className="">
+          <Link {...link} pathname={location.pathname} />
+        </li>
+      ))}
+    </ul>
   );
 };
 
@@ -101,14 +106,14 @@ const Link = ({
   const isActive = pathname === url;
   return (
     <RouterLink
-      className="relative flex gap-4 tracking-[4px] uppercase pl-10 py-4 group"
+      className="relative flex gap-4 tracking-[4px] uppercase pl-10 md:text-[14px] md:px-0 py-4 md:py-10  group"
       to={url}>
-      <span className=" font-black">{id}</span>
+      <span className=" font-black md:hidden lg:block">{id}</span>
       {name}
 
       <span
-        className={`absolute w-1 h-full top-0 right-0 transition-all duration-300 ${
-          isActive ? "bg-white gou" : "group-hover:bg-in-between"
+        className={`absolute w-1 h-full top-0 right-0 transition-all duration-300 md:w-full md:h-1 md:top-[93%] md:left-0 ${
+          isActive ? "bg-white " : "group-hover:bg-in-between"
         }`}></span>
     </RouterLink>
   );

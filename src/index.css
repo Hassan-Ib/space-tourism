@@ -40,7 +40,7 @@ font-family: 'Bellefair', serif; */
     @apply font-barlow leading-relaxed text-primary text-base;
   }
   .btn-effect {
-    @apply before:absolute before:-z-10 before:rounded-full before:w-[100%] before:h-[100%] before:top-1/2 before:left-1/2 before:opacity-0 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[150%] hover:before:h-[150%] hover:before:opacity-100 before:bg-in-between before:bg-opacity-20 before:transition-all before:duration-300;
+    @apply before:absolute before:-z-10 before:rounded-full before:w-[100%] before:h-[100%] before:top-1/2 before:left-1/2 before:opacity-0 before:-translate-x-1/2 before:-translate-y-1/2 hover:before:w-[150%] hover:before:h-[150%] hover:before:opacity-100 before:bg-in-between before:transition-all before:duration-300;
   }
   .btn-effect::before {
     content: " ";

@@ -8,10 +8,8 @@ import Destination from "./pages/Destination";
 import Technology from "./pages/Technology";
 
 function App() {
-  // const { bgImage } = useThemeContext();
-  // console.log(bgImage);
   return (
-    <div id="app-container" className={``}>
+    <div id="app-container">
       <header>
         <Navbar />
       </header>

@@ -10,8 +10,7 @@ module.exports = {
       colors: {
         dark: "#0B0D17",
         primary: "#D0D6F9",
-        "in-between": "#979797",
-        trans: "#0B0D17",
+        "in-between": "rgba(151,151,151,.4)",
       },
     },
   },
