@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
-import LogoIcon from "../../assets/shared/logo.svg";
-import HamburgerMenuIcon from "../../assets/shared/icon-hamburger.svg";
-import closeMenuIcon from "../../assets/shared/icon-close.svg";
 
 const LinksData = [
   {
@@ -53,20 +50,29 @@ const Navbar = () => {
     <nav className="absolute top-0 left-0 z-50 w-full py-6 md:py-0 lg:py-10 bg-transparent flex items-center font-barlow-condensed text-white ">
       {/* logo */}
       <div className="px-6 flex-1 lg:flex-initial ">
-        <img src={LogoIcon} alt="space tourism logo" className=" " />
+        <img
+          src="/assets/shared/logo.svg"
+          alt="space tourism logo"
+          className=" "
+        />
       </div>
       {/* line */}
       <div className=" h-[2px] ml-10 relative z-20 bg-in-between hidden lg:block flex-1 translate-x-5" />
       {/* nav */}
 
       {open ? (
-        <div className="nav-link-effect-mobile absolute md:hidden top-0 right-0 w-[70%] h-screen  backdrop-blur-2xl backdrop-brightness-125 ">
+        <div
+          aria-hidden={!open}
+          className="nav-link-effect-mobile absolute md:hidden top-0 right-0 w-[70%] h-screen  backdrop-blur-2xl backdrop-brightness-125 ">
           <Links closeNav={closeNav} />
           <button
             onClick={closeNav}
             aria-label="close navigation link"
             className="absolute right-10 top-10 ">
-            <img src={closeMenuIcon} alt="close navigation link" />
+            <img
+              src="/assets/shared/icon-close.svg"
+              alt="close navigation link"
+            />
           </button>
         </div>
       ) : null}
@@ -78,7 +84,7 @@ const Navbar = () => {
         onClick={openNav}
         className="px-6 md:hidden"
         aria-label="hamburger menu icon">
-        <img src={HamburgerMenuIcon} alt="menu icon" />
+        <img src="/assets/shared/icon-hamburger.svg" alt="menu icon" />
       </button>
     </nav>
   );
@@ -106,7 +112,7 @@ const Link = ({
   const isActive = pathname === url;
   return (
     <RouterLink
-      className="relative flex gap-4 tracking-[4px] uppercase pl-10 md:text-[14px] md:px-0 py-4 md:py-10  group"
+      className="relative flex gap-4 tracking-[4px] uppercase pl-10 md:text-[14px] md:px-0 py-4 md:py-10 lg:text-base group"
       to={url}>
       <span className=" font-black md:hidden lg:block">{id}</span>
       {name}

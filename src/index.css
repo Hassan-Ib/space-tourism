@@ -15,6 +15,9 @@ font-family: 'Bellefair', serif; */
   h1 {
     @apply font-bellefair text-[80px] leading-normal uppercase md:text-[150px];
   }
+  h2 {
+    @apply font-bellefair text-[56px] md:text-[80px] lg:text-[100px] tracking-widest uppercase leading-normal;
+  }
   h4 {
     @apply text-[20px] md:text-[32px] uppercase tracking-[4px] md:tracking-[5px];
   }
@@ -25,16 +28,16 @@ font-family: 'Bellefair', serif; */
 
 @layer utilities {
   .bg-home {
-    @apply bg-dark bg-[url('./assets/home/background-home-mobile.jpg')] bg-cover bg-center md:bg-[url('./assets/home/background-home-tablet.jpg')] lg:bg-[url('./assets/home/background-home-desktop.jpg')];
+    @apply bg-dark bg-[url('../public/assets/home/background-home-mobile.jpg')] bg-cover bg-center md:bg-[url('../public/assets/home/background-home-tablet.jpg')] lg:bg-[url('../public/assets/home/background-home-desktop.jpg')];
   }
   .bg-crew {
-    @apply bg-[url('./assets/crew/background-crew-mobile.jpg')] md:bg-[url('./assets/crew/background-crew-tablet.jpg')] lg:bg-[url('./assets/crew/background-crew-desktop.jpg')];
+    @apply bg-dark bg-[url('../public/assets/crew/background-crew-mobile.jpg')] bg-cover bg-center md:bg-[url('../public/assets/crew/background-crew-tablet.jpg')] lg:bg-[url('../public/assets/crew/background-crew-desktop.jpg')];
   }
   .bg-destination {
-    @apply bg-[url('./assets/destination/background-destination-mobile.jpg')] md:bg-[url('./assets/destination/background-destination-tablet.jpg')] lg:bg-[url('./assets/destination/background-destination-desktop.jpg')];
+    @apply bg-dark bg-[url('../public/assets/destination/background-destination-mobile.jpg')] bg-cover bg-center md:bg-[url('../public/assets/destination/background-destination-tablet.jpg')] lg:bg-[url('../public/assets/destination/background-destination-desktop.jpg')];
   }
   .bg-technology {
-    @apply bg-[url('./assets/technology/background-technology-mobile.jpg')] md:bg-[url('./assets/technology/background-technology-tablet.jpg')] lg:bg-[url('./assets/technology/background-technology-desktop.jpg')];
+    @apply bg-dark bg-[url('../public/assets/technology/background-technology-mobile.jpg')] bg-cover bg-center md:bg-[url('../public/assets/technology/background-technology-tablet.jpg')] lg:bg-[url('../public/assets/technology/background-technology-desktop.jpg')];
   }
   .text-body {
     @apply font-barlow leading-relaxed text-primary text-base;
@@ -44,6 +47,9 @@ font-family: 'Bellefair', serif; */
   }
   .btn-effect::before {
     content: " ";
+  }
+  .nav-space {
+    @apply pt-32 md:pt-52 lg:pt-64;
   }
 }
 

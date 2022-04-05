@@ -4,7 +4,7 @@ type Props = {};
 
 const Home = (props: Props) => {
   return (
-    <main className="bg-home px-6 pt-44 md:pt-52 lg:pt-64 py-16 flex flex-col gap-28 md:gap-36 items-center lg:flex-row lg:h-screen lg:justify-around lg:gap-0">
+    <main className="bg-home px-6  py-16 nav-space  flex flex-col gap-28 md:gap-36 items-center lg:flex-row lg:h-screen lg:justify-around lg:gap-0">
       <article className="text-center max-w-md lg:text-left ">
         {/* sub-heading */}
         <h5 className="">so, you want to travel</h5>
