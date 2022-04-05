@@ -17,7 +17,7 @@ const Home = (props: Props) => {
         </p>
       </article>
       {/* action bgn */}
-      <div className=" lg:pt-16">
+      <div className=" lg:pt-14">
         <button className="relative text-dark z-10 w-[150px] h-[150px] md:w-[242px] md:h-[242px] lg:w-[264px] lg:h-[264px] bg-white rounded-full uppercase btn-effect ">
           <h4 className="w-full h-full bg-inherit rounded-full flex items-center justify-center">
             Explore

@@ -1,6 +1,7 @@
 import React from "react";
 import { destination as destinationData } from "../data/data";
-
+import TabList from "../components/TabList";
+import Tab from "../components/Tab";
 type Props = {};
 
 const Destination = (props: Props) => {
@@ -11,16 +12,15 @@ const Destination = (props: Props) => {
   };
   console.log(destination.images.png);
   return (
-    <div className="bg-destination nav-space px-6 flex flex-col gap-10 items-center ">
+    <div className="bg-destination pt-32 md:pt-40 px-6 flex flex-col gap-10 items-center lg:flex-row lg:justify-around">
       {/* suheading */}
-      <section className="border-2 border-red-500">
-        <h5>01 pick a destination</h5>
-
+      <section className="text-center md:text-left flex flex-col gap-8 md:gap-16 lg:gap-24 items-center md:items-stretch ">
+        <PageIntro index={1} description="pick a destination" />
         <div>
           <img src={destination.images.png} alt={destination.name} />
         </div>
       </section>
-      <section className="flex flex-col gap-8 border-2 border-red-500 text-center max-w-md">
+      <section className="flex flex-col gap-8 text-center max-w-lg lg:items-stretch lg:text-left lg:pt-28 ">
         <TabList
           list={destinationData.map((el) => el.name)}
           current={destination.name}
@@ -30,59 +30,41 @@ const Destination = (props: Props) => {
           <h2>{destination.name}</h2>
           <p className="text-body">{destination.description}</p>
         </article>
+        {/* <hr className="h-[1px] w-full bg-in-between/70 text-in-between/70" /> */}
+
+        <div className="flex flex-col gap-14 md:flex-row justify-around lg:justify-start py-10 border-t border-white/50">
+          <Info title="AVG. DISTANCE" detail={destination.distance} />
+          <Info title="Est. travel time" detail={destination.travel} />
+        </div>
       </section>
     </div>
   );
 };
 
-type TabListProp = {
-  list: string[];
-  current: string;
-  renderTab: (state: Omit<TabProps, "onClick">) => React.ReactNode;
+type InfoProps = {
+  title: string;
+  detail: string;
 };
-const TabList = ({ renderTab, current, list }: TabListProp) => {
+
+const Info = ({ title, detail }: InfoProps) => {
   return (
-    <ul className="flex gap-3  sm:gap-6 justify-center">
-      {list.map((el, index) => (
-        <>
-          {renderTab({
-            name: el,
-            id: index,
-            isActive: (value) => value === current,
-          })}
-          {/* <Tab name={el} id={index} isActive={(value) => value === current} /> */}
-        </>
-      ))}
-    </ul>
+    <section className="flex flex-col gap-2 uppercase tracking-widest">
+      <p className="text-[14px] font-barlow-condensed ">{title}</p>
+      <p className="text-[28px] font-bellefair">{detail}</p>
+    </section>
   );
 };
 
-type TabProps = {
-  name: string;
-  id: number;
-  children?: React.ReactNode;
-  isActive: (value: string) => boolean;
-  onClick: (id: number) => void;
-  className?: string;
-};
-
-const Tab = ({ onClick, name, id, isActive, className }: TabProps) => {
-  const buttonClick = () => {
-    onClick(id);
-  };
-
-  return (
-    <button
-      onClick={buttonClick}
-      className={`relative flex gap-4 tracking-[4px] uppercase text-[14px] md:text-base md:px-0 py-4 group ${
-        !isActive(name) ? "text-white/90" : ""
-      } ${className ?? ""} `}>
-      {name}
-      <span
-        className={`absolute h-[3px] w-full left-0 top-[96%] transition-all duration-300 ${
-          isActive(name) ? "bg-white " : "group-hover:bg-in-between"
-        }`}></span>
-    </button>
-  );
-};
+const PageIntro = ({
+  index,
+  description,
+}: {
+  index: number;
+  description: string;
+}) => (
+  <h5>
+    {" "}
+    <span className="opacity-50"> 0{index} </span> {description}
+  </h5>
+);
 export default Destination;
