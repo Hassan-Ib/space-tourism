@@ -2,6 +2,9 @@ import React from "react";
 import { destination as destinationData } from "../data/data";
 import TabList from "../components/TabList";
 import Tab from "../components/Tab";
+import PageIntro from "../components/PageInfo";
+import Info from "../components/Info";
+
 type Props = {};
 
 const Destination = (props: Props) => {
@@ -41,30 +44,4 @@ const Destination = (props: Props) => {
   );
 };
 
-type InfoProps = {
-  title: string;
-  detail: string;
-};
-
-const Info = ({ title, detail }: InfoProps) => {
-  return (
-    <section className="flex flex-col gap-2 uppercase tracking-widest">
-      <p className="text-[14px] font-barlow-condensed ">{title}</p>
-      <p className="text-[28px] font-bellefair">{detail}</p>
-    </section>
-  );
-};
-
-const PageIntro = ({
-  index,
-  description,
-}: {
-  index: number;
-  description: string;
-}) => (
-  <h5>
-    {" "}
-    <span className="opacity-50"> 0{index} </span> {description}
-  </h5>
-);
 export default Destination;
