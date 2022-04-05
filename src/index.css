@@ -49,7 +49,7 @@ font-family: 'Bellefair', serif; */
     content: " ";
   }
   .nav-space {
-    @apply pt-32 md:pt-52 lg:pt-72;
+    @apply pt-32 md:pt-44 lg:pt-72;
   }
 }
 
