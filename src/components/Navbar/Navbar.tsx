@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link as RouterLink, useLocation } from "react-router-dom";
+import { NavLink as RouterLink, useLocation } from "react-router-dom";
 // import Container from "../Container";
 
 const LinksData = [

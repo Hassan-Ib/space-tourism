@@ -40,7 +40,7 @@ const Crew = (props: Props) => {
 
             <section className="md:row-start-2">
               <TabList
-                className="md:gap-4"
+                className="gap-8 md:gap-4"
                 current={crewMember.name}
                 list={crew.map((member) => member.name)}
                 renderNamedTab={(state) => {
