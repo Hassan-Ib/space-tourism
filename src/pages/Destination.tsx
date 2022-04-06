@@ -31,9 +31,16 @@ const Destination = (props: Props) => {
             <TabList
               list={destinationData.map((el) => el.name)}
               current={destination.name}
-              renderTab={(state) => (
-                <Tab onClick={changeDestination} {...state} />
-              )}
+              renderNamedTab={(state) => {
+                return (
+                  <Tab
+                    onClick={changeDestination}
+                    name={state.name ?? ""}
+                    id={state.id}
+                    isActive={state.isActive}
+                  />
+                );
+              }}
             />
             <article>
               <h2>{destination.name}</h2>

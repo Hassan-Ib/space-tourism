@@ -30,3 +30,14 @@ const Tab = ({ onClick, name, id, isActive, className }: TabProps) => {
 };
 
 export default Tab;
+
+export const EmptyTab = ({ isActive, id, onClick, name = "" }: TabProps) => {
+  return (
+    <button
+      aria-label={`crew member ${name}`}
+      onClick={() => onClick(id)}
+      className={`w-[10px] h-[10px] lg:w-[15px] lg:h-[15px] rounded-full bg-white ${
+        !isActive(name) ? "bg-in-between hover:bg-in-between/90" : null
+      }`}></button>
+  );
+};

@@ -22,7 +22,7 @@ font-family: 'Bellefair', serif; */
     @apply font-bellefair text-[24px] md:text-[40px] lg:text-[56px] uppercase;
   }
   h4 {
-    @apply text-base md:text-[24px] lg:text-[32px] uppercase;
+    @apply text-base md:text-[24px] lg:text-[32px] uppercase leading-normal;
   }
   h5 {
     @apply font-barlow-condensed text-base uppercase tracking-[4.7px] text-primary md:text-[20px] lg:text-[28px];
@@ -34,7 +34,7 @@ font-family: 'Bellefair', serif; */
     @apply font-bellefair lg:text-[28px];
   }
   .sub-heading-2 {
-    @apply font-barlow-condensed lg:text-[14px] tracking-[2.35px];
+    @apply font-barlow-condensed lg:text-[14px] tracking-[2.35px] text-primary;
   }
   .nav-text {
     @apply font-barlow-condensed text-base md:text-[14px] lg:text-base uppercase tracking-[2.7px];
