@@ -37,7 +37,7 @@ const Destination = (props: Props) => {
                     onClick={changeDestination}
                     name={state.name ?? ""}
                     id={state.id}
-                    isActive={state.isActive}
+                    isActive={state.isActive(state.name)}
                   />
                 );
               }}

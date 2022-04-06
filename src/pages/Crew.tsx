@@ -25,7 +25,7 @@ const Crew = (props: Props) => {
 
           {/*------------------- image --------------------*/}
 
-          <section className="h-[233px] sm:h-[572px] lg:min-w-[300px]  md:row-start-3 lg:row-start-1 lg:row-end-3 lg:grid-cols-2 lg:col-start-2  border-2 border-red-500">
+          <section className="h-[233px] sm:h-[572px] lg:min-w-[300px]  md:row-start-3 lg:row-start-1 lg:row-end-3 lg:grid-cols-2 lg:col-start-2 ">
             <img
               src={crewMember.images.png}
               alt={crewMember.name}
@@ -46,7 +46,7 @@ const Crew = (props: Props) => {
                 renderNamedTab={(state) => {
                   return (
                     <EmptyTab
-                      isActive={state.isActive}
+                      isActive={state.isActive(state.name)}
                       id={state.id}
                       name={state.name}
                       onClick={changeCrew}
