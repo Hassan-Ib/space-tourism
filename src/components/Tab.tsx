@@ -17,8 +17,8 @@ const Tab = ({ onClick, name, id, isActive, className }: TabProps) => {
   return (
     <button
       onClick={buttonClick}
-      className={`relative flex gap-4 tracking-[2px] uppercase text-[14px] md:text-base md:px-0 py-4 group ${
-        !isActive(name) ? "text-white/80" : ""
+      className={`relative flex gap-4 text-[14px] md:text-base tracking-[2.36px] md:tracking-[2.7px] uppercase py-4 md:px-0 group ${
+        !isActive(name) ? "text-primary" : ""
       } ${className ?? ""} `}>
       {name}
       <span

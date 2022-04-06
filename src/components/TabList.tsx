@@ -16,7 +16,6 @@ const TabList = ({ renderTab, current, list }: TabListProp) => {
             id: index,
             isActive: (value) => value === current,
           })}
-          {/* <Tab name={el} id={index} isActive={(value) => value === current} /> */}
         </li>
       ))}
     </ul>

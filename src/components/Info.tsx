@@ -6,8 +6,8 @@ type InfoProps = {
 const Info = ({ title, detail }: InfoProps) => {
   return (
     <section className="flex flex-col gap-2 uppercase tracking-widest">
-      <p className="text-[14px] font-barlow-condensed ">{title}</p>
-      <p className="text-[28px] font-bellefair">{detail}</p>
+      <p className="sub-heading-2">{title}</p>
+      <p className="sub-heading-1">{detail}</p>
     </section>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
+// import Container from "../Container";
 
 const LinksData = [
   {
@@ -47,49 +48,51 @@ const Navbar = () => {
   }, [open]);
 
   return (
-    <nav className="absolute top-0 left-0 z-50 w-full py-6 md:py-0 lg:py-10 bg-transparent flex items-center font-barlow-condensed text-white ">
+    <nav className="absolute top-0 left-0 z-50 w-full py-6 md:py-0 lg:py-10 bg-transparent font-barlow-condensed text-white ">
       {/* logo */}
-      <div className="px-6 flex-1 lg:flex-initial ">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-          <g fill="none" fill-rule="evenodd">
-            <circle cx="24" cy="24" r="24" fill="#FFF" />
-            <path
-              fill="#0B0D17"
-              d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
-            />
-          </g>
-        </svg>
-      </div>
-      {/* line */}
-      <div className=" h-[2px] ml-10 relative z-20 bg-in-between hidden lg:block flex-1 translate-x-5" />
-      {/* nav */}
-
-      {open ? (
-        <div
-          aria-hidden={!open}
-          className="nav-link-effect-mobile absolute md:hidden top-0 right-0 w-[70%] h-screen  backdrop-blur-2xl backdrop-brightness-125 ">
-          <Links />
-          <button
-            onClick={closeNav}
-            aria-label="close navigation link"
-            className="absolute right-10 top-10 ">
-            <img
-              src="/assets/shared/icon-close.svg"
-              alt="close navigation link"
-            />
-          </button>
+      <div className="flex items-center">
+        <div className="px-6 flex-1 lg:flex-initial ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+            <g fill="none" fillRule="evenodd">
+              <circle cx="24" cy="24" r="24" fill="#FFF" />
+              <path
+                fill="#0B0D17"
+                d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
+              />
+            </g>
+          </svg>
         </div>
-      ) : null}
+        {/* line */}
+        <div className=" h-[2px] ml-10 relative z-20 bg-in-between hidden lg:block flex-1 translate-x-5" />
+        {/* nav */}
 
-      <div className="nav-link-effect hidden md:block backdrop-blur-2xl backdrop-brightness-125 px-10 lg:px-28   ">
-        <Links />
+        {open ? (
+          <div
+            aria-hidden={!open}
+            className="nav-link-effect-mobile absolute md:hidden top-0 right-0 w-[70%] h-screen  backdrop-blur-2xl backdrop-brightness-125 ">
+            <Links />
+            <button
+              onClick={closeNav}
+              aria-label="close navigation link"
+              className="absolute right-10 top-10 ">
+              <img
+                src="/assets/shared/icon-close.svg"
+                alt="close navigation link"
+              />
+            </button>
+          </div>
+        ) : null}
+
+        <div className="nav-link-effect hidden md:block backdrop-blur-2xl backdrop-brightness-125 px-10 lg:px-28   ">
+          <Links />
+        </div>
+        <button
+          onClick={openNav}
+          className="px-6 md:hidden"
+          aria-label="hamburger menu icon">
+          <img src="/assets/shared/icon-hamburger.svg" alt="menu icon" />
+        </button>
       </div>
-      <button
-        onClick={openNav}
-        className="px-6 md:hidden"
-        aria-label="hamburger menu icon">
-        <img src="/assets/shared/icon-hamburger.svg" alt="menu icon" />
-      </button>
     </nav>
   );
 };
@@ -116,7 +119,7 @@ const Link = ({
   const isActive = pathname === url;
   return (
     <RouterLink
-      className="relative flex gap-4 tracking-[4px] uppercase pl-10 md:text-[14px] md:px-0 py-4 md:py-10 lg:text-base group"
+      className="relative flex gap-4 uppercase nav-text pl-10 md:px-0 py-4 md:py-8  group"
       to={url}>
       <span className=" font-black md:hidden lg:block">{id}</span>
       {name}

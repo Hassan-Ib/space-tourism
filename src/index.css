@@ -16,17 +16,30 @@ font-family: 'Bellefair', serif; */
     @apply font-bellefair text-[80px] leading-normal uppercase md:text-[150px];
   }
   h2 {
-    @apply font-bellefair text-[56px] md:text-[80px] lg:text-[100px] tracking-widest uppercase leading-normal;
+    @apply font-bellefair text-[56px] md:text-[80px] lg:text-[100px] uppercase leading-normal;
+  }
+  h3 {
+    @apply font-bellefair text-[24px] md:text-[40px] lg:text-[56px] uppercase;
   }
   h4 {
-    @apply text-[20px] md:text-[32px] uppercase tracking-[4px] md:tracking-[5px];
+    @apply text-base md:text-[24px] lg:text-[32px] uppercase;
   }
   h5 {
-    @apply font-barlow-condensed text-base uppercase tracking-[3px] text-primary md:text-[20px] lg:text-[28px];
+    @apply font-barlow-condensed text-base uppercase tracking-[4.7px] text-primary md:text-[20px] lg:text-[28px];
   }
 }
 
 @layer utilities {
+  .sub-heading-1 {
+    @apply font-bellefair lg:text-[28px];
+  }
+  .sub-heading-2 {
+    @apply font-barlow-condensed lg:text-[14px] tracking-[2.35px];
+  }
+  .nav-text {
+    @apply font-barlow-condensed text-base md:text-[14px] lg:text-base uppercase tracking-[2.7px];
+  }
+
   .bg-home {
     @apply bg-dark bg-[url('../public/assets/home/background-home-mobile.jpg')] bg-cover bg-center md:bg-[url('../public/assets/home/background-home-tablet.jpg')] lg:bg-[url('../public/assets/home/background-home-desktop.jpg')];
   }
@@ -49,7 +62,7 @@ font-family: 'Bellefair', serif; */
     content: " ";
   }
   .nav-space {
-    @apply pt-32 md:pt-44 lg:pt-72;
+    @apply py-16 pt-32 md:pt-44 lg:pt-64;
   }
 }
 
