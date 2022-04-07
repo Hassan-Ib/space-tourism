@@ -13,7 +13,7 @@ const Technology = () => {
   };
   console.log(technology);
   return (
-    <main className="bg-technology pt-44 ">
+    <main className="bg-technology py-24 pt-44 ">
       {/* <Container> */}
 
       {/*------------- page intro --------------- */}
