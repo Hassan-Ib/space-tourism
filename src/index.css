@@ -31,10 +31,10 @@ font-family: 'Bellefair', serif; */
 
 @layer utilities {
   .sub-heading-1 {
-    @apply font-bellefair lg:text-[28px];
+    @apply font-bellefair lg:text-[28px] uppercase;
   }
   .sub-heading-2 {
-    @apply font-barlow-condensed lg:text-[14px] tracking-[2.35px] text-primary;
+    @apply font-barlow-condensed lg:text-[14px] tracking-[2.35px] uppercase text-primary;
   }
   .nav-text {
     @apply font-barlow-condensed text-base md:text-[14px] lg:text-base uppercase tracking-[2.7px];

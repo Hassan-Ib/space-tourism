@@ -27,7 +27,7 @@ const Crew = (props: Props) => {
 
           <section className="h-[233px] sm:h-[572px] lg:min-w-[300px]  md:row-start-3 lg:row-start-1 lg:row-end-3 lg:grid-cols-2 lg:col-start-2 ">
             <img
-              src={crewMember.images.png}
+              src={crewMember.images.webp}
               alt={crewMember.name}
               className=" h-full object-cover object-center"
             />

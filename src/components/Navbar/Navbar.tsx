@@ -83,7 +83,7 @@ const Navbar = () => {
           </div>
         ) : null}
 
-        <div className="nav-link-effect hidden md:block backdrop-blur-2xl backdrop-brightness-125 px-10 lg:px-28   ">
+        <div className="nav-link-effect hidden md:block backdrop-blur-2xl backdrop-brightness-125 px-10 lg:px-32   ">
           <Links />
         </div>
         <button

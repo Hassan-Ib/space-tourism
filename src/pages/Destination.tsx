@@ -15,7 +15,7 @@ const Destination = (props: Props) => {
   };
   console.log(destination.images.png);
   return (
-    <div className="bg-destination pt-32 md:pt-40 px-6 ">
+    <main className="bg-destination pt-32 md:pt-40 px-6 ">
       <Container>
         <div className="mb-16 lg:mb-0">
           <PageIntro index={1} description="pick a destination" />
@@ -35,7 +35,7 @@ const Destination = (props: Props) => {
                 return (
                   <Tab
                     onClick={changeDestination}
-                    name={state.name ?? ""}
+                    name={state.name}
                     id={state.id}
                     isActive={state.isActive(state.name)}
                   />
@@ -55,7 +55,7 @@ const Destination = (props: Props) => {
           </section>
         </div>
       </Container>
-    </div>
+    </main>
   );
 };
 

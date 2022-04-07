@@ -14,6 +14,7 @@ const Tab = ({ onClick, name, id, isActive, className }: TabProps) => {
     onClick(id);
   };
 
+  console.log("from tab", isActive);
   return (
     <button
       onClick={buttonClick}
@@ -36,8 +37,21 @@ export const EmptyTab = ({ isActive, id, onClick, name = "" }: TabProps) => {
     <button
       aria-label={`crew member ${name}`}
       onClick={() => onClick(id)}
-      className={`w-[10px] h-[10px] lg:w-[15px] lg:h-[15px] rounded-full bg-white ${
+      className={`w-[15px] h-[15px] rounded-full bg-white ${
         !isActive ? "bg-in-between hover:bg-in-between/90" : null
       }`}></button>
+  );
+};
+
+export const RoundTab = ({ isActive, onClick, name, id }: TabProps) => {
+  return (
+    <button
+      onClick={() => onClick(id)}
+      aria-label={`${name} tab`}
+      className={` font-bellefair rounded-full w-[40px] h-[40px] md:w-[60px] md:h-[60px]  md:text-2xl  border border-in-between text-dark bg-white ${
+        !isActive ? "hover:border-white bg-transparent text-white" : null
+      }`}>
+      {name}
+    </button>
   );
 };
