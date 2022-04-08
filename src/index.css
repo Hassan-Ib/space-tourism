@@ -64,13 +64,47 @@ font-family: 'Bellefair', serif; */
   .nav-space {
     @apply py-16 pt-32 md:pt-44 lg:pt-64;
   }
+
+  .nav-link-effect-mobile {
+    @apply absolute;
+  }
+  .nav-linK-effect {
+    @apply relative;
+    /* background: hsla(0, 0%, 100%, 0.2); */
+  }
+
+  .nav-link-effect,
+  .nav-link-effect-mobile {
+    @apply overflow-hidden bg-inherit;
+    background-color: hsla(0, 0%, 97%, 0.2);
+  }
+
+  .nav-link-effect-mobile::before,
+  .nav-link-effect::before {
+    content: " ";
+    @apply absolute w-full top-0 left-0 h-full -z-10 bg-inherit;
+    filter: blur(10px);
+  }
+  .nav-link-effect::after,
+  .nav-link-effect-mobile::before {
+    content: " ";
+    @apply absolute w-full top-0 left-0 h-full -z-20 bg-dark;
+    filter: blur(10px);
+  }
 }
 
-@supports (not ((-webkit-backdrop-filter: none) or (backdrop-filter: none))) {
-  .nav-link-effect {
-    @apply md:bg-dark lg:bg-dark/95;
-  }
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .nav-link-effect,
   .nav-link-effect-mobile {
-    @apply bg-dark/95;
+    @apply backdrop-blur-2xl backdrop-brightness-125 bg-none;
+    background-image: none;
+  }
+
+  .nav-link-effect::after,
+  .nav-link-effect-mobile::after,
+  .nav-link-effect::before,
+  .nav-link-effect-mobile::before {
+    display: none;
+    visibility: hidden;
   }
 }

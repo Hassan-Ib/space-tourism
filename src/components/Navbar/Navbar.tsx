@@ -69,7 +69,7 @@ const Navbar = () => {
         {open ? (
           <div
             aria-hidden={!open}
-            className="nav-link-effect-mobile absolute md:hidden top-0 right-0 w-[70%] h-screen  backdrop-blur-2xl backdrop-brightness-125 ">
+            className="nav-link-effect-mobile absolute z-20 md:hidden top-0 right-0 w-[70%] h-screen   ">
             <Links />
             <button
               onClick={closeNav}
@@ -82,13 +82,13 @@ const Navbar = () => {
             </button>
           </div>
         ) : null}
-
-        <div className="nav-link-effect hidden md:block backdrop-blur-2xl backdrop-brightness-125 px-10 lg:px-32   ">
+        {/* desktop link list */}
+        <div className="hidden md:block px-10 lg:px-32 relative nav-link-effect">
           <Links />
         </div>
         <button
           onClick={openNav}
-          className="px-6 md:hidden"
+          className=" px-6 md:hidden"
           aria-label="hamburger menu icon">
           <img src="/assets/shared/icon-hamburger.svg" alt="menu icon" />
         </button>
